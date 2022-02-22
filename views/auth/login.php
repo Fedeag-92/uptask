@@ -7,7 +7,7 @@ if($reestablecio){
         'success'
         ).then((result) => {
             if (result.isConfirmed) {
-                window.history.pushState({}, null, 'http://localhost:3000/');
+                window.history.pushState({}, null, 'https://uptask-prueba.herokuapp.com/');
             }
         })
             
