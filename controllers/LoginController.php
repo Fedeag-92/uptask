@@ -87,20 +87,22 @@ class LoginController {
                     // Eliminar password2
                     unset($usuario->password2);
 
-                    // Generar el Token
-                    $usuario->crearToken();
+                    // Generar el Token (DESABILITADO POR DEPLOYMENT)
+                    //$usuario->crearToken();
+
+                    $usuario->confirmado = 1;
 
                     // Crear un nuevo usuario
                     $resultado =  $usuario->guardar();
                     
 
-                    // Enviar email
-                    $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
-                    $email->enviarConfirmacion();
+                    // Enviar email (DESABILITADO POR DEPLOYMENT)
+                    //$email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                    //$email->enviarConfirmacion();
                     
 
                     if($resultado) {
-                        header('Location: /mensaje');
+                        header('Location: /');
                     }
                 }
             }
